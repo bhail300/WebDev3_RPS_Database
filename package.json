@@ -1,0 +1,24 @@
+{
+  "name": "webdev3_rps_database",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bhail300/WebDev3_RPS_Database.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bhail300/WebDev3_RPS_Database/issues"
+  },
+  "homepage": "https://github.com/bhail300/WebDev3_RPS_Database#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "sqlite3": "^5.1.2"
+  }
+}
