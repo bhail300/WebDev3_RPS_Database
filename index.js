@@ -17,6 +17,7 @@ app.get('/',(req,res)=>{
 app.get('/add-user',(req,res)=>{
     const name = req.query.name
     const streak = req.query.streak
+    //update instead
     db.run(`INSERT INTO users (name,streak) values (?,?)`, [name, streak])
 
     db.each("SELECT * from users", (err, row)=>{
