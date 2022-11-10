@@ -34,7 +34,6 @@ app.get('/add-user',(req,res)=>{
 
 app.get('/load-scores',(req,res)=>{
     db.all("SELECT * from users ORDER BY wins DESC", (err, row)=>{
-        console.log(row)
         res.json(row)
     })
     
