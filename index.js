@@ -7,7 +7,7 @@ const db = new sqlite3.Database('./db');
 
 
 
-db.run('CREATE TABLE IF NOT EXISTS users(id INTEGER PRIMARY KEY AUTOINCREMENT, name varchar(15), wins int)')
+db.run('CREATE TABLE IF NOT EXISTS users(id INTEGER PRIMARY KEY AUTOINCREMENT, name varchar(15) UNIQUE, wins int)')
 
 const app = express()
 app.use(cors())
@@ -26,7 +26,7 @@ app.get('/add-user',(req,res)=>{
     user = req.query.name
     wins = req.query.win
     //update instead
-    db.run(`INSERT INTO users (name, wins) values (?, ?)`, [user, wins])
+    db.run(`INSERT OR IGNORE INTO users (name, wins) values (?, ?)`, [user, 0])
     db.all("SELECT * from users ORDER BY wins DESC", (err, row)=>{
             console.log(row)
         })
